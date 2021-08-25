@@ -1,19 +1,34 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      PAGINA PRINCIPAL
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            PAGINA PRINCIPAL
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
- <ion-button color="primary"routerLink="/pagina1">PAGINA 1 </ion-button>
-<ion-button color="secondary" (click)="irPagina2()">PAGINA 2 </ion-button>
-<ion-button color="tertiary" (click)="irPagina3()">PAGINA 3 </ion-button>
-<ion-button color="success">Success</ion-button>
-<ion-button color="warning">Warning</ion-button>
-<ion-button color="danger">Danger</ion-button>
-<ion-button color="light">Light</ion-button>
-<ion-button color="medium">Medium</ion-button>
-<ion-button color="dark">Dark</ion-button>
+    <div class="titulo">formulario</div>
+    <div></div>
+    <ion-item>
+        <ion-label position="floating">Nombre completo:</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Rut: </ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Comentario: </ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-label>{{valor}}</ion-label>
+    <ion-button color="primary" routerLink="/pagina1">PAGINA 1 </ion-button>
+    <ion-button color="secondary" (click)="irPagina2()">PAGINA 2 </ion-button>
+    <ion-button color="tertiary" (click)="irPagina3()">PAGINA 3 </ion-button>
+    <ion-button color="success">Success</ion-button>
+    <ion-button color="warning">Warning</ion-button>
+    <ion-button color="danger">Danger</ion-button>
+    <ion-button color="light">Light</ion-button>
+    <ion-button color="medium">Medium</ion-button>
+    <ion-button color="dark">Dark</ion-button>
 </ion-content>
