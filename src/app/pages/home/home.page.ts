@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { MenuController, NavController } from '@ionic/angular';
+//importar componente de manjeo de formulario
+import { FormControl,FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,40 @@ import { MenuController, NavController } from '@ionic/angular';
   
 })
 export class HomePage {
-  valor:string="hola mundo";
 
-  constructor(private router: Router,private navControl: NavController, private menu: MenuController) {}
+  constructor() {}
 
-  irPagina2(){
-    this.router.navigate(['/pagina2']);
+//creamos controles de formulario
+///<ion-input [FormContro]= "elRut"> </ion-input>
+  persona = new FormGroup({  
+    elRut : new FormControl(''),
+    elNombreCompleto : new FormControl(''),
+    laEdad : new FormControl('')
+  });
+
+  //creacion de un metodo
+  lista_personas = new Array();
+  perso:any;
+  grabar(){
+    this.perso={
+      rut: this.persona.controls.elRut.value,
+      nombre: this.persona.controls.elNombreCompleto.value,
+      edad: this.persona.controls.laEdad.value
+    };
+    this.lista_personas.push(this.perso);
+    var datos =this.lista_personas;
+    localStorage.setItem('misdatos',JSON.stringify(datos));
+    alert  ("grabo");
+ 
   }
-  irPagina3(){
-    this.navControl.navigateForward(['/pagina3']);
-  }
+  eliminar(){}
+
+  listar(){}
+  
+
+
+
+
+
 
 }

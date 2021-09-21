@@ -1,3 +1,4 @@
+//!222
 <ion-header [translucent]="true">
     <ion-toolbar>
         <ion-title>
@@ -7,28 +8,30 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <div class="titulo">formulario</div>
-    <div></div>
-    <ion-item>
-        <ion-label position="floating">Nombre completo:</ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Rut: </ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label position="floating">Comentario: </ion-label>
-        <ion-input></ion-input>
-    </ion-item>
-    <ion-label>{{valor}}</ion-label>
-    <ion-button color="primary" routerLink="/pagina1">PAGINA 1 </ion-button>
-    <ion-button color="secondary" (click)="irPagina2()">PAGINA 2 </ion-button>
-    <ion-button color="tertiary" (click)="irPagina3()">PAGINA 3 </ion-button>
-    <ion-button color="success">Success</ion-button>
-    <ion-button color="warning">Warning</ion-button>
-    <ion-button color="danger">Danger</ion-button>
-    <ion-button color="light">Light</ion-button>
-    <ion-button color="medium">Medium</ion-button>
-    <ion-button color="dark">Dark</ion-button>
+    <div class="titulo">Formulario ingreso de datos
+        <ion-icon name="contact"></ion-icon>
+    </div>
+    <div class="contenido"></div>
+    <form [formGroup]="persona" (ngSubmit)="grabar()">
+        <ion-item>
+            <ion-label position="floating">Rut : </ion-label>
+            <ion-input formControlName="elRut"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Nombre completo: </ion-label>
+            <ion-input formControlName="elNombreCompleto"></ion-input>
+
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Edad: </ion-label>
+            <ion-input formControlName="laEdad"></ion-input>
+
+
+        </ion-item>
+        <ion-button color="success" type="submit">Grabar</ion-button>
+        <ion-button color="primary" routerLink="/pagina1">Listar</ion-button>
+
+    </form>
+
+    <ion-label>Listado</ion-label>
 </ion-content>
